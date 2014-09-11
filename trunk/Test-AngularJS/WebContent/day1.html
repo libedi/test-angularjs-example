@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>AngularJS TEST day1</title>
+</head>
+<body>
+	<div ng-app="">	<!-- ng-app 지시어는 AngularJS 애플리케이션 임을 정의한다. -->
+		<p>input 박스에 아무거나 입력해보세요.</p>
+		<p>Name : <input type="text" ng-model="name">	<!-- ng-model 지시어는 HTML 값을 애플리케이션 데이터로 바인딩한다. -->
+		<p ng-bind="name"></p>	<!-- ng-bind 지시어는 애플리케이션 데이터를 HTML view로 바인딩한다. -->
+	</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+</body>
+</html>
