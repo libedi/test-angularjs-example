@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>AngularJS TEST day2</title>
+</head>
+<body>
+	<div ng-app="" ng-init="firstName='Park'">		<!-- ng-init 지시어는 AngularJS 애플리케이션 변수값을 초기화한다. -->
+		<p>The name is <span ng-bind="firstName"></span></p>
+	</div>
+	
+	<!-- HTML5에 유효하게 적용하려면 'ng-' 대신 'data-ng-'를 사용할 수 있다. -->
+	<!-- 페이지에 ng-app은 한개만 적용이 가능하다. 따라서 아래 스크립트는 실행되지 않는다. -->
+	<div data-ng-app="" data-ng-init="secondName='Park'">
+		<p>The name is <span data-ng-bind="secondName"></span></p>
+	</div>
+	
+	<div ng-app="">
+		<p>My first expression: {{5 + 5}}</p>		<!-- AngularJS 식은 중괄호를 겹쳐서 사용. ng-bind의 간편한 방식인가? -->
+	</div>
+	
+	<!-- ng-controller 지시어는 컨트롤러를 정의한다. -->
+	<div ng-app="" ng-controller="personController">
+		First Name: <input type="text" ng-model="firstName"/><br/>
+		Last Name: <input type="text" ng-model="lastName"/><br/>
+		<br/>
+		Full Name: {{firstName + " " + lastName}}
+	</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script type="text/javascript">
+	function personController($scope){
+		$scope.firstName = "Sang Jun";
+		$scope.lastName = "Park";
+	}
+	</script>
+</body>
+</html>
