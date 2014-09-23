@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>AngularJS TEST day3</title>
+</head>
+<body>
+	<div ng-app="" ng-init="quantity=1;cost=5;firstName='John';lastName='Doe'">	<!-- controller를 사용하는게 일반적이다. -->
+		<p>My first expression : {{5 + 5}}</p>
+		
+		<p>Total in dollar : {{quantity * cost}}</p>
+		<p>Total in dollar : <span ng-bind="quantity * cost"></span></p>
+		
+		<p>The name is {{firstName + " " + lastName}}</p>
+		<p>The name is <span ng-bind="firstName + ' ' + lastName"></span></p>
+	</div>
+	
+	<div ng-app="" ng-init="person={first:'John';last='Doe'}">
+		<p>The name is {{person.last}}</p>
+	</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+</body>
+</html>
