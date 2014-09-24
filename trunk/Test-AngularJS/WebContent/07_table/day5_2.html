@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS TEST day5</title>
+<style type="text/css">
+/* CSS Style */
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+</head>
+<body>
+	<div ng-app="" ng-controller="customerController">
+		<table>
+			<tr ng-repeat="x in names | orderBy:'Country'">		<!-- orderBy Filter -->
+				<td>{{ x.Name }}</td>
+				<td>{{ x.Country | uppercase }}</td>			<!-- uppercase Filter -->
+			</tr>
+		</table>
+	</div>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script type="text/javascript">
+	function customerController($scope, $http){
+		$http.get("http://www.w3schools.com/website/Customers_JSON.php")
+		.success(function(response){
+			$scope.names = response;
+		});
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS TEST day5</title>
+</head>
+<body>
+	<div ng-app="" ng-init="mySwitch=false;hour=13">
+		<!-- 'ng-disabled' directive binds AngularJS application data to the diabled attribute of HTML elements. -->
+		<p>
+			<button ng-disabled="mySwitch">Click Me!</button>
+		</p>
+		<p>
+			<input type="checkbox" ng-model="mySwitch">Button Disabled!
+		</p>
+		<p>{{ mySwitch }}</p>
+		
+		<!-- 'ng-show' directive shows or hides an HTML elements. -->
+		<p ng-show="true">I am visible.</p>
+		<p ng-show="false">I am not visible.</p>
+		<p ng-show="hour > 12">I am visible.</p>
+		
+		<!-- 'ng-hide' directive hides or shows an HTML elements. -->
+		<p ng-hide="true">I am not visible.</p>
+		<p ng-hide="false">I am visible.</p>
+	</div>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+</body>
+</html>

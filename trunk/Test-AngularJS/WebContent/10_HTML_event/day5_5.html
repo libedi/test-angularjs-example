@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS TEST day5</title>
+</head>
+<body>
+	<div ng-app="" ng-controller="myController">
+		<!-- 'ng-click' : AngularJS click event -->
+		<button ng-click="count = count + 1">Click Me!</button>
+		<p>{{ count }}</p>
+	</div>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script type="text/javascript">
+	function myController($scope){
+		$scope.count = 0;
+	}
+	</script>
+</body>
+</html>
